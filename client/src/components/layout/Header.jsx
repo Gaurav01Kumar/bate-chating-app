@@ -6,6 +6,7 @@ import {
   Typography,
   IconButton,
   Tooltip,
+  Backdrop
 } from "@mui/material";
 import { orange } from "../../constant/color";
 import {
@@ -97,13 +98,13 @@ const Header = () => {
         </Toolbar>
       </AppBar>
     </Box>
-    {   isSearch &&  <Suspense fallback={<div>loading...</div>} >
+    {   isSearch &&  <Suspense fallback={<Backdrop  open/>} >
       <SearchDialouge />
     </Suspense>   }
-    {   isNotification &&  <Suspense fallback={<div>loading...</div>} >
+    {   isNotification && <Suspense fallback={<Backdrop  open/>} >
       <NotificationDialouge />
     </Suspense>   }
-    {   isNewGroup &&  <Suspense fallback={<div>loading...</div>} >
+    {   isNewGroup && <Suspense fallback={<Backdrop  open/>} >
       <NewGroupDialouge />
     </Suspense>   }
     </>
